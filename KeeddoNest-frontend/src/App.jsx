@@ -11,10 +11,12 @@ import CounsellingServices from './pages/offerings/CounsellingServices';
 import Enrollment from './pages/enrollment/Enrollment';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Gallery from './pages/gallery/Gallery';
 
 function App() {
   return (
     <BrowserRouter basename="/keeddoNest-frontend-demo-v1">
+      <div className="app-container">
       <Navbar />
 
       <Routes>
@@ -27,8 +29,10 @@ function App() {
         <Route path="/counsellingServices" element={<CounsellingServices />} />
         <Route path="/enrollment" element={<Enrollment />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
       <Footer />
+      </div>
     </BrowserRouter>
   );
 }

@@ -33,7 +33,7 @@ export default function OfferingSection() {
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
   },
   {
-    title: "Counselling Services",
+    title: "Counselling Services & Seminar Programs",
     link: "/keeddoNest-frontend-demo-v1/counsellingServices",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
   }
