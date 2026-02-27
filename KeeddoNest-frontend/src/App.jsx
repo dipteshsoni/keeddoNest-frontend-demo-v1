@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home from './components/Home/Home';
 import EarlyLearning from './pages/offerings/EarlyLearning';
 import FreeZone from './pages/offerings/FreeZone';
@@ -15,10 +16,10 @@ import Gallery from './pages/gallery/Gallery';
 
 function App() {
   return (
-    <BrowserRouter basename="/keeddoNest-frontend-demo-v1">
+    <HashRouter>
       <div className="app-container">
       <Navbar />
-
+      <div className="page-content">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/earlyLearning" element={<EarlyLearning />} />
@@ -31,9 +32,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
+      </div>
       <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
