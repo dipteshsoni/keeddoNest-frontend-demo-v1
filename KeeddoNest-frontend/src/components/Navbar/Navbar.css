@@ -37,18 +37,24 @@
   position: relative;
 }
 
-/* DROPDOWN */
+
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   position: absolute;
-  top: 30px;
+  top: 100%;
   left: 0;
   background: white;
   list-style: none;
-  padding: 10px;
+  padding: 10px 0;
   display: none;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* THIS is the important part */
 .dropdown:hover .dropdown-menu {
   display: block;
 }

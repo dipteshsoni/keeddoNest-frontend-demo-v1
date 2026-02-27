@@ -1,23 +1,33 @@
 import './App.css'
 import Navbar from "./components/Navbar/Navbar";
-import HomeHero from "./components/HomeHero/HomeHero";
-import IdeologySection from './components/IdeologySection/IdeologySection';
-import CentrePhilosophy from './components/CentrePhilosophy/CentrePhilosophy';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home/Home';
+import EarlyLearning from './pages/offerings/EarlyLearning';
+import FreeZone from './pages/offerings/FreeZone';
+import LearningSupport from './pages/offerings/LearningSupport';
+import SkillDevelopment from './pages/offerings/SkillDevelopment';
+import ToddlerProgram from './pages/offerings/ToddlerProgram';
+import CounsellingServices from './pages/offerings/CounsellingServices';
+import Enrollment from './pages/enrollment/Enrollment';
 
 function App() {
-  return(
-    <>
+  return (
+    <BrowserRouter basename="/keeddoNest-frontend-demo-v1">
       <Navbar />
-      <HomeHero />
-      <IdeologySection/>
-      <CentrePhilosophy/>
-      <div style={{ height: "200vh" }}>Scroll test</div>
-   
-      <div className="App">
-        <h1>Keeddonest 🚀</h1>
-      </div>
-     </>
-  ) 
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/earlyLearning" element={<EarlyLearning />} />
+        <Route path="/freeZone" element={<FreeZone />} />
+        <Route path="/learningSupport" element={<LearningSupport />} />
+        <Route path="/skillDevelopment" element={<SkillDevelopment />} />
+        <Route path="/toddlerProgram" element={<ToddlerProgram />} />
+        <Route path="/counsellingServices" element={<CounsellingServices />} />
+        <Route path="/enrollment" element={<Enrollment />} />
+      </Routes>
+
+    </BrowserRouter>
+  );
 }
 
 export default App;

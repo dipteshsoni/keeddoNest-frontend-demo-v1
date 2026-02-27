@@ -1,0 +1,109 @@
+.founder-section {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+  padding: 60px 16px;
+  overflow: hidden;
+}
+
+/* BLURRED BACKGROUND */
+.founder-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(6px);
+  transform: scale(1.08);
+  z-index: -1;
+}
+
+/* WRAPPER */
+.founder-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.founder-title {
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+}
+
+/* CARD */
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: rgba(0,0,0,0.35);
+  padding: 24px;
+  border-radius: 12px;
+  color: white;
+}
+
+/* IMAGE */
+.founder-image {
+  display: flex;
+  justify-content: center;
+}
+
+.founder-image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.founder-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-content h1 {
+  font-size: 1.3rem;
+}
+
+.founder-content h2 {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.founder-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+
+  .founder-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 40px;
+  }
+
+  /* REVERSE CARD */
+  .founder-card.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .founder-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .founder-content {
+    text-align: left;
+  }
+}
