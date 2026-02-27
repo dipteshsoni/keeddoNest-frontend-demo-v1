@@ -1,0 +1,70 @@
+.connect-section {
+  margin-top: 80px;
+  padding: 60px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.connect-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.connect-title {
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+/* Background container */
+.connect-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.1),
+    rgba(255, 140, 0, 0.1)
+  );
+}
+
+/* Individual card */
+.connect-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.connect-card h3 {
+  font-size: 1.2rem;
+}
+
+.connect-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.connect-card button {
+  margin-top: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+
+  .connect-cards {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .connect-card {
+    flex: 1;
+  }
+
+}

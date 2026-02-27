@@ -1,0 +1,34 @@
+.footer {
+  margin-top: 80px;
+  padding: 20px 16px;
+  background-color: #0d1b3d;
+  color: white;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}

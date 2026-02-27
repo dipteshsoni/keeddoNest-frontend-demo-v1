@@ -1,39 +1,32 @@
 .founder-section {
-  position: relative;
   width: 100%;
-  margin-top: 60px;
-  padding: 60px 16px;
-  overflow: hidden;
+  margin: 80px 0;
+  padding: 50px 16px;
+  display: flex;
+  justify-content: center;
 }
 
-/* BLURRED BACKGROUND */
-.founder-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-  background-size: cover;
-  background-position: center;
-
-  filter: blur(6px);
-  transform: scale(1.08);
-  z-index: -1;
-}
-
-/* WRAPPER */
+/* Smaller than ideology for better hierarchy */
 .founder-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;   /* Smaller for desktop */
+  padding: 40px 20px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.08),
+    rgba(255, 140, 0, 0.08)
+  );
+
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .founder-title {
   text-align: center;
-  color: white;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 /* CARD */
@@ -42,44 +35,41 @@
   flex-direction: column;
   gap: 20px;
 
-  background: rgba(0,0,0,0.35);
-  padding: 24px;
-  border-radius: 12px;
-  color: white;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
 }
 
-/* IMAGE */
 .founder-image {
   display: flex;
   justify-content: center;
 }
 
 .founder-image img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* TEXT */
 .founder-content {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .founder-content h1 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .founder-content h2 {
-  font-size: 1rem;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
 .founder-content p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -89,17 +79,16 @@
   .founder-card {
     flex-direction: row;
     align-items: center;
-    text-align: left;
-    gap: 40px;
+    gap: 30px;
+    padding: 25px;
   }
 
-  /* REVERSE CARD */
   .founder-card.reverse {
     flex-direction: row-reverse;
   }
 
   .founder-image img {
-    width: 180px;
+    width: 320px;
     height: 180px;
   }
 

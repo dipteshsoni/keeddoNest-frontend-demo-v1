@@ -9,6 +9,8 @@ import SkillDevelopment from './pages/offerings/SkillDevelopment';
 import ToddlerProgram from './pages/offerings/ToddlerProgram';
 import CounsellingServices from './pages/offerings/CounsellingServices';
 import Enrollment from './pages/enrollment/Enrollment';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -24,8 +26,9 @@ function App() {
         <Route path="/toddlerProgram" element={<ToddlerProgram />} />
         <Route path="/counsellingServices" element={<CounsellingServices />} />
         <Route path="/enrollment" element={<Enrollment />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      <Footer />
     </BrowserRouter>
   );
 }

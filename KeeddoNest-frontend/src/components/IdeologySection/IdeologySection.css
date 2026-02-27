@@ -1,92 +1,71 @@
 .ideology-section {
-  position: relative;
-  width: 90%;
-  min-height: 60vh;
-
-  margin: 60px auto; /* space from top & bottom */
-
-  overflow: hidden;
+  width: 100%;
+  margin: 80px 0;
+  padding: 60px 16px;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
+.ideology-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px 20px;
+  border-radius: 20px;
 
-/* ===== BLURRED BACKGROUND LAYER ===== */
-.ideology-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.08),
+    rgba(255, 140, 0, 0.08)
+  );
 
-  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-  background-size: cover;
-  background-position: center;
-
-  filter: blur(6px);   /* 👈 blur level */
-  transform: scale(1.05); /* prevents blur edge cutoff */
-
-  z-index: -1;
+  overflow: hidden; /* IMPORTANT */
 }
 
-/* ===== MOBILE CAROUSEL ===== */
+/* ================= MOBILE CAROUSEL ================= */
 
 .carousel {
   display: flex;
-  width: 300%;
   transition: transform 0.6s ease;
 }
 
-
-
 .slide {
-  width: 100%;
-  flex-shrink: 0;
-
+  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 20px 10px;
 }
 
 .slide img {
-  width: 80%;
-  max-width: 300px;
-  height: 480px;
+  width: 100%;
+  max-width: 320px;
+  height: 260px;   /* FIXED HEIGHT */
   object-fit: cover;
   border-radius: 12px;
 }
 
 .slide h3 {
   margin-top: 12px;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 6px 12px;
-  border-radius: 6px;
+  font-size: 1rem;
 }
 
-/* ===== DESKTOP GRID (HIDDEN BY DEFAULT) ===== */
-
+/* Hide desktop grid initially */
 .desktop-grid {
   display: none;
 }
 
-/* ===== DESKTOP VIEW ===== */
+/* ================= DESKTOP ================= */
+
 @media (min-width: 768px) {
 
-  /* hide carousel on desktop */
   .carousel {
     display: none;
   }
 
-  /* show grid */
   .desktop-grid {
-    width: 100%;
-    max-width: 1100px;
     display: flex;
-    justify-content: space-between;
     gap: 24px;
-    padding: 40px;
+    margin-top: 20px;
   }
 
   .grid-card {
@@ -103,9 +82,7 @@
 
   .grid-card h3 {
     margin-top: 12px;
-    color: white;
-    background: rgba(0,0,0,0.5);
-    padding: 6px 12px;
-    border-radius: 6px;
+    font-size: 1.1rem;
   }
+
 }

@@ -31,6 +31,7 @@ export default function IdeologySection() {
   return (
     <section className="ideology-section">
       {/* MOBILE CAROUSEL */}
+      <div className="ideology-wrapper">
       <div
         className="carousel"
         style={{ transform: `translateX(-${index * 100}%)` }}
@@ -51,6 +52,7 @@ export default function IdeologySection() {
             <h3>{item.title}</h3>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
