@@ -1,8 +1,9 @@
 .connect-section {
-  margin-top: 80px;
+  margin-top: 12px;
   padding: 60px 16px;
   display: flex;
   justify-content: center;
+  border: 2px solid blue;
 }
 
 .connect-wrapper {

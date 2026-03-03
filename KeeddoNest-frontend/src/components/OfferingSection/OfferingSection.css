@@ -1,7 +1,8 @@
 .offers-section {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 12px;
   text-align: center;
+  border: 2px solid red;
 }
 
 .offers-title {

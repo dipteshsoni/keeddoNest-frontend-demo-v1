@@ -1,6 +1,7 @@
 .home-hero {
   width: 100%;
   min-height: 60vh;
+  border: 3px solid purple;
 
   display: flex;
   flex-direction: column; /* MOBILE FIRST */
