@@ -2,11 +2,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import KeeddoNestLogo from "../../assets/KeeddonestLogo.jpeg";
+import { HiMenu, HiX } from "react-icons/hi"; 
 
 export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [offeringsOpen, setOfferingsOpen] = useState(false);
+
+    // const [menuOpen, setMenuOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleSub = (i) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
   return (
     <>
@@ -47,14 +55,16 @@ export default function Navbar() {
 
         </ul>
 
-        {/* HAMBURGER */}
+        {/* HAMBURGER
         <div className="hamburger" onClick={() => setMenuOpen(true)}>
           ☰
         </div>
 
-      </nav>
 
-      {/* MOBILE PANEL */}
+
+      </nav> */}
+
+      {/* MOBILE PANEL
       <div className={`mobile-panel ${menuOpen ? "open" : ""}`}>
         <div className="close-btn" onClick={() => setMenuOpen(false)}>✕</div>
 
@@ -86,9 +96,78 @@ export default function Navbar() {
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
 
         </ul>
+      </div> */}
+
+       <div className="hamburger" onClick={() => setMenuOpen(true)}>
+          <HiMenu />
+        </div>
+      </nav>
+
+      {/* FULLSCREEN MOBILE MENU */}
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+
+          {/* BRAND SECTION INSIDE MOBILE MENU */}
+  <div className="mobile-brand">
+    <img src={KeeddoNestLogo} alt="Keeddonest Logo" />
+
+    <HiX
+      className="close-icon"
+      onClick={() => setMenuOpen(false)}
+    />
+  </div>
+
+        <ul className="mobile-nav-list">
+
+          <li>
+            <Link onClick={() => setMenuOpen(false)} to="/">
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link onClick={() => setMenuOpen(false)} to="/about">
+              About
+            </Link>
+          </li>
+
+          {/* OFFERINGS DROPDOWN */}
+          <li>
+            <div
+              className="mobile-dropdown-toggle"
+              onClick={() => toggleSub(0)}
+            >
+              Offerings
+              <span>{openIndex === 0 ? "−" : "+"}</span>
+            </div>
+
+            {openIndex === 0 && (
+              <ul className="mobile-sub-list">
+                <li><Link onClick={() => setMenuOpen(false)} to="/earlyLearning">Early Learning</Link></li>
+                <li><Link onClick={() => setMenuOpen(false)} to="/toddlerProgram">Toddler Program</Link></li>
+                <li><Link onClick={() => setMenuOpen(false)} to="/skillDevelopment">Skill Development</Link></li>
+                <li><Link onClick={() => setMenuOpen(false)} to="/learningSupport">Learning Support</Link></li>
+                <li><Link onClick={() => setMenuOpen(false)} to="/freeZone">FreeZone</Link></li>
+                <li><Link onClick={() => setMenuOpen(false)} to="/counsellingServices">Counselling</Link></li>
+              </ul>
+            )}
+          </li>
+
+          <li><Link onClick={() => setMenuOpen(false)} to="/enrollment">Enrollment</Link></li>
+          <li><Link onClick={() => setMenuOpen(false)} to="/gallery">Gallery</Link></li>
+          <li><Link onClick={() => setMenuOpen(false)} to="/contact">Contact</Link></li>
+
+        </ul>
       </div>
 
-      {menuOpen && <div className="backdrop" onClick={() => setMenuOpen(false)} />}
+      {/* optional backdrop */}
+      {menuOpen && (
+        <div
+          className="mobile-backdrop"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+{/* 
+      {menuOpen && <div className="backdrop" onClick={() => setMenuOpen(false)} />} */}
     </>
   );
 }

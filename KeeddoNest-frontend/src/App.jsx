@@ -13,10 +13,15 @@ import Enrollment from './pages/enrollment/Enrollment';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Gallery from './pages/gallery/Gallery';
+import IntroLoader from './components/IntroLoader/IntroLoader';
+import { useState } from 'react';
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true);
   return (
-    <HashRouter>
+    <>
+    
+        <HashRouter>
       <div className="app-container">
       <Navbar />
       <div className="page-content">
@@ -36,6 +41,11 @@ function App() {
       <Footer />
       </div>
     </HashRouter>
+      {/* LOADER OVERLAY */}
+      {showLoader && (
+        <IntroLoader onFinish={() => setShowLoader(false)} />
+      )}
+    </>
   );
 }
 
