@@ -1,8 +1,14 @@
 .footer {
   margin-top: 20px;
   padding: 20px 16px;
-  background-color: #0d1b3d;
-  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.1),
+    rgba(255, 140, 0, 0.1)
+  );  
+  color: green;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .footer-container {

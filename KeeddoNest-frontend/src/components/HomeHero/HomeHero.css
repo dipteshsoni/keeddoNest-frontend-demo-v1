@@ -45,3 +45,20 @@
     justify-content: center;
   }
 }
+
+.introPara {
+  font-size: 16px;
+  line-height: 1.6;
+  color: green;
+  font-weight: 600;
+}
+.introHeading {
+  font-size: 28px;
+  color: orange;
+  font-weight: 800;
+}
+.introSubHeading {
+  font-size: 20px;
+  color: rgba(255, 166, 0, 0.764);
+  font-weight: 700;
+}

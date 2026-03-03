@@ -14,15 +14,14 @@ export default function HomeHero() {
 
       {/* RIGHT TEXT */}
       <div className="hero-content">
-        <h1>Welcome to Keeddonest</h1>
+        <h1 className="introHeading">Welcome to KeeddoNest</h1>
 
-        <h2>Brief intro this is Keeddonest</h2>
+        <h4 className="introSubHeading">A Psychologist-Led Space for Emotional, Learning & Life Skills Development 🪺</h4>
 
-        <p>
-          Keeddonest is a space built to nurture growth, learning and mindful
-          development. Through structured programs and a strong philosophy, it
-          aims to create meaningful transformation while keeping education
-          engaging, balanced and purposeful for every learner.
+        <p className="introPara">
+          KeeddoNest is not just a learning center.
+It is a safe developmental space where children, parents, and adults are supported emotionally, socially, physically, and academically — without pressure, judgment, or comparison.
+We believe that children grow best when they feel emotionally secure first. Learning, confidence, communication, and discipline naturally follow when a child feels understood.
         </p>
       </div>
 

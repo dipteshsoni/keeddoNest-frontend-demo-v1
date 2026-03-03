@@ -21,12 +21,12 @@ export default function ProgramDetail({ title, sections }) {
 
             <h2>{section.heading}</h2>
 
-            {/* Paragraph Type Section */}
+            {/* TEXT SECTION */}
             {section.type === "text" && (
               <p>{section.content}</p>
             )}
 
-            {/* List Type Section */}
+            {/* SIMPLE LIST */}
             {section.type === "list" && (
               <ul>
                 {section.content.map((item, i) => (
@@ -35,32 +35,43 @@ export default function ProgramDetail({ title, sections }) {
               </ul>
             )}
 
-            {/* Dropdown Type Section */}
-            {section.type === "dropdown" &&
-              section.content.map((item, index) => (
-                <div key={index} className="syllabus-item">
+            {/* ADVANCED SYLLABUS (NESTED) */}
+            {section.type === "advancedDropdown" &&
+              section.content.map((item, index) => {
 
-                  <div
-                    className="syllabus-header"
-                    onClick={() => toggle(index + sIndex)}
-                  >
-                    <span>{item.topic}</span>
-                    <span>{openIndex === index + sIndex ? "−" : "+"}</span>
-                  </div>
+                const globalIndex = `${sIndex}-${index}`;
 
-                  {openIndex === index + sIndex && (
-                    <div className="syllabus-content">
-                      <ul>
-                        {item.points.map((p, i) => (
-                          <li key={i}>{p}</li>
-                        ))}
-                      </ul>
+                return (
+                  <div key={index} className="syllabus-item">
+
+                    <div
+                      className="syllabus-header"
+                      onClick={() => toggle(globalIndex)}
+                    >
+                      <span>{item.topic}</span>
+                      <span>{openIndex === globalIndex ? "−" : "+"}</span>
                     </div>
-                  )}
 
-                </div>
-              ))
-            }
+                    {openIndex === globalIndex && (
+                      <div className="syllabus-content">
+
+                        {item.subsections.map((sub, i) => (
+                          <div key={i} className="sub-section">
+                            <h4>{sub.title}</h4>
+                            <ul>
+                              {sub.points.map((p, j) => (
+                                <li key={j}>{p}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+
+                      </div>
+                    )}
+
+                  </div>
+                );
+              })}
 
           </div>
         ))}
