@@ -33,6 +33,7 @@ export default function IntroLoader({ onFinish }) {
 
   return (
     <div className={`intro-loader ${fadeOut ? "fade-out" : ""}`}>
+        
       <h1 className="brand-text">
         {fullText.split("").map((char, index) => {
           const isVisible = index < visibleCount;
