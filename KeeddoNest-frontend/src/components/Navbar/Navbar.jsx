@@ -25,7 +25,7 @@ export default function Navbar() {
           <img
             src={KeeddoNestLogo}
             alt="Keeddonest Logo"
-            className="nav-logo"
+            className="nav-logo"  
           />
           <span className="brand1">Keedd<span className="brand2">oNest</span></span>
         </div>
