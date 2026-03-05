@@ -1,7 +1,7 @@
 .home-hero {
   width: 100%;
   min-height: 60vh;
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
 
   display: flex;
   flex-direction: column; /* MOBILE FIRST */
@@ -10,13 +10,16 @@
 /* IMAGE AREA */
 .hero-image {
   width: 100%;
-  height: 40vh;
+  height: 45vh;
+  /* border: 2px solid red; */
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* border: 4px solid blue; */
+  margin: 8px auto;
 }
 
 /* TEXT AREA */

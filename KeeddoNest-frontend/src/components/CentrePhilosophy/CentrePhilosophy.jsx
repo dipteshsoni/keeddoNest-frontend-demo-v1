@@ -8,7 +8,8 @@ export default function CentrePhilosophy() {
 
     <p>
       A nurturing space where growth is guided with clarity,
-      structure and compassion. We believe in creating a safe
+      structure and compassion.
+      <br /> We believe in creating a safe
       environment that fosters emotional security, intellectual
       development and meaningful personal progress.
     </p>
