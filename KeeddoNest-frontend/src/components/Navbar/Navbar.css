@@ -57,6 +57,7 @@
   border-radius: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-weight: 600;
   color: #0d1b3d;
 }
 
@@ -257,10 +258,10 @@
    background: linear-gradient(
     90deg,
     white,
-    rgb(255, 224, 166)
+    rgb(255, 246, 233)
   );
   
-  color: green;
+   color: #0d1b3d;
   padding: 30px 20px;
   transform: translateX(100%);
   transition: transform 0.35s ease;
@@ -294,16 +295,17 @@
   flex-direction: column;
   gap: 22px;
   font-size: 1.15rem;
-  font-weight: 500;
-  color: green;
+  font-weight: 700;
+  color: #0d1b3d;
   
   
 }
 
 .mobile-nav-list li a {
   text-decoration: none;
-  color: green;
+  color: #0d1b3d;
   font-size: 1.4rem;
+  font-weight: 700;
   border-bottom: 2px dashed orange;
   
 }
@@ -336,16 +338,16 @@
    background: linear-gradient(
     90deg,
     white,
-   rgb(255, 224, 166)
+   rgb(249, 242, 230)
   );
 
-  color: green;
+  color: #0d1b3d;
   
 }  
 .mobile-sub-list li a {
   font-size: 1.2rem;
   opacity: 0.9;
-  color: green;
+  color: #0d1b3d;
   padding: 8px 12px ;
 
   

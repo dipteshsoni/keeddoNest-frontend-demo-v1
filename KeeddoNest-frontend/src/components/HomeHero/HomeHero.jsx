@@ -1,4 +1,6 @@
 import "./homeHero.css";
+import KeeddonestImage1 from "../../assets/keeddoNestImage01.jpeg";
+// import KeeddoNestLogo from "../../assets/KeeddonestLogo.jpeg";
 
 export default function HomeHero() {
   return (
@@ -7,7 +9,7 @@ export default function HomeHero() {
       {/* LEFT IMAGE */}
       <div className="hero-image">
         <img
-          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+          src={KeeddonestImage1}
           alt="placeholder"
         />
       </div>

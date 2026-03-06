@@ -15,7 +15,6 @@ export default function Home() {
       <CentrePhilosophy />
       <FounderSection />
       <OfferingSection />
-      <WannaConnect />
       <Contact />
     </>
   );

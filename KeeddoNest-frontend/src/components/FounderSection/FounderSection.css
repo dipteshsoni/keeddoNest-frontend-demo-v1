@@ -1,42 +1,58 @@
 .founder-section {
   width: 100%;
-  margin: 20px 0;
-  padding: 50px 16px;
+  margin: 0 0;
+  padding: 30px 16px;
   display: flex;
   justify-content: center;
-  border: 4px dashed green;
+  border-top: 5px solid orange;
 }
 
-/* Smaller than ideology for better hierarchy */
 .founder-wrapper {
   width: 100%;
-  max-width: 900px;   /* Smaller for desktop */
-  padding: 40px 20px;
+  max-width: 1200px;
+  padding: 30px 20px;
   border-radius: 20px;
-
+/* 
   background: linear-gradient(
-    135deg,
+    90deg,
     rgba(0, 123, 255, 0.08),
     rgba(255, 140, 0, 0.08)
-  );
+  ); */
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  /* border: 2px solid #0d1b3d; */
 }
 
 .founder-title {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: orange;
 }
+
+
+/* GRID WRAPPER */
+.founder-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 
 /* CARD */
 .founder-card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 
   background: white;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 123, 255, 0.08),
+    rgba(255, 140, 0, 0.08)
+  );
   padding: 20px;
   border-radius: 14px;
 }
@@ -47,8 +63,8 @@
 }
 
 .founder-image img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -61,39 +77,41 @@
 }
 
 .founder-content h1 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  color: orange;
 }
 
 .founder-content h2 {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 1.1rem;
+  color: orange;
 }
 
 .founder-content p {
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.5;
+  color: green;
+  font-weight: 600;
 }
 
-/* ===== DESKTOP ===== */
+.founder-contact {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* DESKTOP LAYOUT */
 @media (min-width: 768px) {
 
-  .founder-card {
+  .founder-grid {
     flex-direction: row;
-    align-items: center;
-    gap: 30px;
-    padding: 25px;
+    justify-content: center;
+    gap: 40px;
   }
 
-  .founder-card.reverse {
-    flex-direction: row-reverse;
+  .founder-card {
+    width: 50%;
   }
 
-  .founder-image img {
-    width: 320px;
-    height: 180px;
-  }
-
-  .founder-content {
-    text-align: left;
-  }
 }

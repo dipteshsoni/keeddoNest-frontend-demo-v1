@@ -1,119 +1,103 @@
-import { useState } from "react";
-import "./Contact.css";
+import "./contact.css";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaInstagram,
+  FaFacebook,
+  FaLinkedin,
+} from "react-icons/fa";
 
 export default function Contact() {
-
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: ""
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // 🔹 DUMMY GOOGLE FORM ENDPOINT
-    const formURL =
-      "https://docs.google.com/forms/d/e/DUMMY_FORM_ID/formResponse";
-
-    const data = new FormData();
-
-    // 🔹 Dummy entry IDs (replace later)
-    data.append("entry.1111111111", formData.name);
-    data.append("entry.2222222222", formData.phone);
-    data.append("entry.3333333333", formData.email);
-
-    fetch(formURL, {
-      method: "POST",
-      mode: "no-cors",
-      body: data,
-    });
-
-    setSubmitted(true);
-  };
-
   return (
-    <section className="contact-page">
+    <section className="contact-section">
+      <h1 className="contact-title">Contact Us</h1>
+      <p className="contact-subtitle">
+        Any question or remarks? Just write us a message.
+      </p>
 
-      <div className="contact-wrapper">
+      <div className="contact-container">
+        {/* LEFT INFO */}
+        <div className="contact-info">
+          <h2>Contact Information</h2>
 
-        {/* LEFT SECTION */}
-        <div className="contact-left">
-          <h1>
-            Connect with Our <span>Team</span>
-          </h1>
+          <div className="info-item">
+            <FaPhone />
+            <span>+91 98765 43210</span>
+          </div>
 
-          <p>
-            Reach out to Keeddonest for guidance, support, and structured
-            learning opportunities in a safe and nurturing environment.
-          </p>
+          <div className="info-item">
+            <FaEnvelope />
+            <span>info@keeddonest.in</span>
+          </div>
 
-          <div className="contact-info">
-            <p><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Email:</strong> info@keeddonest.com</p>
-            <p>
-              <strong>Address:</strong><br />
-              Keeddonest Learning Centre,<br />
-              Chinchwad, Pune,<br />
-              Maharashtra, India
-            </p>
+          <div className="info-item">
+            <FaMapMarkerAlt />
+            <span>
+              Keeddonest Learning Centre <br />
+              Pune, Maharashtra <br />
+              India
+            </span>
+          </div>
+
+          <div className="social-icons">
+            <FaInstagram />
+            <FaFacebook />
+            <FaLinkedin />
           </div>
         </div>
 
-        {/* RIGHT SECTION (FORM CARD) */}
-        <div className="contact-form-card">
-
-          <h2>Get In Touch</h2>
-
-          {submitted ? (
-            <p className="success-msg">
-              Thank you! We will get back to you shortly.
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit}>
-
+        {/* RIGHT FORM */}
+        <div className="contact-form">
+          <form
+            action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+            method="POST"
+            target="_blank"
+          >
+            <div className="form-group">
+              <label>Name</label>
               <input
+                name="entry.111111"
                 type="text"
-                name="name"
-                placeholder="Full Name"
+                placeholder="Your name"
                 required
-                onChange={handleChange}
               />
+            </div>
 
+            <div className="form-group">
+              <label>Mobile Number</label>
               <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
+                name="entry.222222"
+                type="tel"
+                placeholder="+91"
                 required
-                onChange={handleChange}
               />
+            </div>
 
+            <div className="form-group">
+              <label>Email</label>
               <input
+                name="entry.333333"
                 type="email"
-                name="email"
-                placeholder="Email Address"
+                placeholder="your@email.com"
                 required
-                onChange={handleChange}
               />
+            </div>
 
-              <button type="submit">Submit</button>
+            <div className="form-group">
+              <label>Message</label>
+              <textarea
+                name="entry.444444"
+                rows="4"
+                placeholder="Write your message..."
+                required
+              />
+            </div>
 
-            </form>
-          )}
-
+            <button type="submit">Send Message</button>
+          </form>
         </div>
-
       </div>
-
     </section>
   );
 }
