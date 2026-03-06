@@ -11,9 +11,9 @@ import {
 export default function Contact() {
   return (
     <section className="contact-section">
-      <h1 className="contact-title">Contact Us</h1>
+      <h1 className="contact-title">Wanna Connect !!</h1>
       <p className="contact-subtitle">
-        Any question or remarks? Just write us a message.
+        Any doubt or query? Feel free to reach out to us. We are here to help you and your child on this wonderful learning journey.
       </p>
 
       <div className="contact-container">
@@ -23,28 +23,46 @@ export default function Contact() {
 
           <div className="info-item">
             <FaPhone />
-            <span>+91 98765 43210</span>
+            <span>+91 94246 95252</span>
+          </div>
+          <div className="info-item">
+            <FaPhone />
+            <span>+91 62659 59841</span>
           </div>
 
           <div className="info-item">
             <FaEnvelope />
-            <span>info@keeddonest.in</span>
+            <span>keeddonest@gmail.com</span>
+          </div>
+          
+         <div className="info-item">
+            <FaInstagram />
+            <span>
+              @keeddonest
+            </span>
+            {/* <FaFacebook />
+            <FaLinkedin /> */}
           </div>
 
           <div className="info-item">
             <FaMapMarkerAlt />
             <span>
-              Keeddonest Learning Centre <br />
-              Pune, Maharashtra <br />
+              Main Office : 1st Floor, Samdariya Gold <br />
+              Rewa, Madhya Pradesh <br />
               India
             </span>
           </div>
 
-          <div className="social-icons">
+          {/* <div className="social-icons">
             <FaInstagram />
-            <FaFacebook />
-            <FaLinkedin />
+            <span>
+              @keeddonest
+            </span>
+            {/* <FaFacebook />
+            <FaLinkedin /> *
           </div>
+        </div> */}
+
         </div>
 
         {/* RIGHT FORM */}

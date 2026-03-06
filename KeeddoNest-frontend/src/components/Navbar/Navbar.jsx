@@ -34,7 +34,7 @@ export default function Navbar() {
         <ul className="nav-links">
 
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/">About</Link></li>
 
           <li className="dropdown">
   <span className="dropdown-title">Offerings ▾</span>

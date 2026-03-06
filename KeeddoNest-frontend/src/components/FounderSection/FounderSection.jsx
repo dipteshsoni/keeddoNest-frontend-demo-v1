@@ -20,8 +20,11 @@ export default function FounderSection() {
             </div>
 
             <div className="founder-content">
-              <h1>Founder Name</h1>
-              <h2>Designation</h2>
+              <h1>Soumya</h1>
+              <h2>Founder</h2>
+              <div className="founder-contact">
+                Director of People & Brand Strategy and Caregiver.
+              </div>
 
               <p>
                 A passionate mentor dedicated to creating a safe and meaningful
@@ -30,9 +33,7 @@ export default function FounderSection() {
                 confidence and long-term personal development.
               </p>
 
-              <div className="founder-contact">
-                Contact: +91 98765 43210
-              </div>
+              
             </div>
           </div>
 
@@ -47,8 +48,11 @@ export default function FounderSection() {
             </div>
 
             <div className="founder-content">
-              <h1>Founder Vision</h1>
-              <h2>Guiding Philosophy</h2>
+              <h1>Ashuti Dwivedi</h1>
+              <h2>Founder</h2>
+              <div className="founder-contact">
+                Pyschologist & Early childhood educator.
+              </div>
 
               <p>
                 Built on the idea of one centre and one philosophy, this journey
@@ -57,9 +61,7 @@ export default function FounderSection() {
                 community and emotional safety.
               </p>
 
-              <div className="founder-contact">
-                Contact: info@keeddonest.in
-              </div>
+              
             </div>
           </div>
 
