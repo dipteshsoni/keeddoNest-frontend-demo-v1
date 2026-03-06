@@ -2,82 +2,80 @@ import { useState } from "react";
 import "./ProgramDetail.css";
 
 export default function ProgramDetail({ title, sections }) {
+  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [openSub, setOpenSub] = useState(null);
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleSub = (index) => {
+    setOpenSub(openSub === index ? null : index);
   };
 
   return (
     <section className="program-page">
-
-      <div className="program-wrapper">
-
+      <div className={`program-wrapper ${selectedTopic ? "blur" : ""}`}>
         <h1 className="program-title">{title}</h1>
 
         {sections.map((section, sIndex) => (
           <div key={sIndex} className="program-card">
-
             <h2>{section.heading}</h2>
 
-            {/* TEXT SECTION */}
-            {section.type === "text" && (
-              <p>{section.content}</p>
-            )}
+            {section.type === "text" && <p className="program-card-section-content">{section.content}</p>}
 
-            {/* SIMPLE LIST */}
-            {section.type === "list" && (
-              <ul>
-                {section.content.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            )}
-
-            {/* ADVANCED SYLLABUS (NESTED) */}
-            {section.type === "advancedDropdown" &&
-              section.content.map((item, index) => {
-
-                const globalIndex = `${sIndex}-${index}`;
-
-                return (
-                  <div key={index} className="syllabus-item">
-
-                    <div
-                      className="syllabus-header"
-                      onClick={() => toggle(globalIndex)}
-                    >
-                      <span>{item.topic}</span>
-                      <span>{openIndex === globalIndex ? "−" : "+"}</span>
-                    </div>
-
-                    {openIndex === globalIndex && (
-                      <div className="syllabus-content">
-
-                        {item.subsections.map((sub, i) => (
-                          <div key={i} className="sub-section">
-                            <h4>{sub.title}</h4>
-                            <ul>
-                              {sub.points.map((p, j) => (
-                                <li key={j}>{p}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-
-                      </div>
-                    )}
-
+            {section.type === "advancedDropdown" && (
+              <div className="topics-grid">
+                {section.content.map((topic, tIndex) => (
+                  <div
+                    key={tIndex}
+                    className="topic-card"
+                    onClick={() => setSelectedTopic(topic)}
+                  >
+                    {topic.topic}
                   </div>
-                );
-              })}
-
+                ))}
+              </div>
+            )}
           </div>
         ))}
-
       </div>
 
+      {/* MODAL */}
+
+      {selectedTopic && (
+        <div className="topic-modal">
+          <div className="modal-card">
+            <button
+              className="modal-close"
+              onClick={() => {
+                setSelectedTopic(null);
+                setOpenSub(null);
+              }}
+            >
+              ✕
+            </button>
+
+            <h2>{selectedTopic.topic}</h2>
+
+            {selectedTopic.subsections.map((sub, index) => (
+              <div key={index} className="modal-subcard">
+                <div
+                  className="modal-subheader"
+                  onClick={() => toggleSub(index)}
+                >
+                  <span>{sub.title}</span>
+                  <span >{openSub === index ? "−" : "+"}</span>
+                </div>
+
+                {openSub === index && (
+                  <ul className="modal-subheader-body-ul">
+                    {sub.points.map((p, i) => (
+                      <li key={i}>{p}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

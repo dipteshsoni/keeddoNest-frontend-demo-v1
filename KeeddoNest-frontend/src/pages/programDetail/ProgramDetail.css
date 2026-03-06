@@ -1,7 +1,6 @@
 .program-page {
   width: 100%;
-  margin: 20px 0;
-  padding: 20px 16px;
+  padding: 60px 20px;
   display: flex;
   justify-content: center;
 }
@@ -9,8 +8,84 @@
 .program-wrapper {
   width: 100%;
   max-width: 1200px;
-  padding: 20px 30px;
-  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.program-title {
+  text-align: center;
+  font-size: 2rem;
+  color: orange;
+  font-weight: 800;
+}
+
+/* Main card */
+
+.program-card {
+  background: linear-gradient(
+    135deg,
+    rgba(254, 249, 249, 0.995),
+    rgb(255, 249, 242)
+  );
+  padding: 25px;
+  border-radius: 16px;
+}
+
+/* section heading */
+
+.section-heading {
+  margin-bottom: 10px;
+
+}
+
+.section-text {
+  line-height: 1.6;
+}
+
+/* topics */
+
+.topics-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .topics-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* topic card */
+
+.topic-card {
+  margin-top: 12px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #eee;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+
+  overflow: hidden;
+  transition: all 0.25s ease;
+    color: green;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+/* topic header */
+
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 18px;
+
+  font-weight: 600;
 
   background: linear-gradient(
     135deg,
@@ -18,59 +93,218 @@
     rgba(255, 140, 0, 0.08)
   );
 
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  cursor: pointer;
+
 }
 
-.program-title {
-  text-align: center;
-  font-size: 2rem;
+.topic-header:hover {
+  background: rgba(0,0,0,0.03);
 }
 
-/* Card */
-.program-card {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* topic body animation */
+
+.topic-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
 }
 
-/* Syllabus */
-.syllabus-item {
-  border-top: 1px solid #ddd;
-  padding: 10px 0;
+.topic-body.open {
+  max-height: 1000px;
+  padding: 10px 15px 15px;
 }
 
-.syllabus-header {
+/* sub cards */
+
+.subcard {
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 12px;
+  padding: 6px;
+}
+
+/* sub header */
+
+.sub-header {
   display: flex;
   justify-content: space-between;
+  padding: 10px 12px;
   cursor: pointer;
   font-weight: 500;
 }
 
-.syllabus-content {
-  margin-top: 10px;
+/* sub body animation */
+
+.sub-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
 }
 
-.syllabus-content ul {
+.sub-body.open {
+  max-height: 500px;
+  padding: 0 12px 10px;
+}
+
+/* list */
+
+.sub-body ul {
   padding-left: 18px;
   line-height: 1.6;
+  list-style: none;
 }
 
-.sub-section {
-  margin-top: 15px;
+/* blur background */
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
 }
 
-.sub-section h4 {
-  margin-bottom: 5px;
-  font-size: 0.95rem;
+
+/* topics grid */
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .topics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* topic card */
+
+.topic-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #eee;
+  cursor: pointer;
   font-weight: 600;
+
+  transition: all 0.25s ease;
+  color: green;
 }
 
-.syllabus-content ul {
-  padding-left: 18px;
+.topic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* modal overlay */
+
+.topic-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+
+/* modal card */
+
+.modal-card {
+  position: relative;
+
+  width: 90%;
+  max-width: 700px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 60px 45px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 2px solid orange;
+}
+
+/* close button */
+
+.modal-close {
+  position: absolute;
+
+  top: 12px;
+  right: 16px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  color: #555;
+}
+
+.modal-close:hover {
+  color: black;
+}
+
+
+/* sub cards */
+
+.modal-subcard {
+  background: #f7f7f7;
+
+  border-radius: 10px;
+
+  margin-top: 12px;
+
+  padding: 12px;
+  color: orange;
+}
+
+
+/* header */
+
+.modal-subheader {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: large;
+
+}
+
+.modal-subheader-body-ul {
+  font-size: 15px;
+  font-weight: 600;
+    color: green;
+    list-style : none;
+}
+
+
+/* close button */
+
+.close-btn {
+  margin-top: 20px;
+
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #333;
+  color: white;
+
+  cursor: pointer;
+}
+
+.program-card-section-content {
   line-height: 1.6;
+  color: green;
+  font-weight: 600;
 }

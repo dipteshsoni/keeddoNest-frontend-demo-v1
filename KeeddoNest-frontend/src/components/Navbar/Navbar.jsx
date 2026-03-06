@@ -125,7 +125,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link onClick={() => setMenuOpen(false)} to="/about">
+            <Link onClick={() => setMenuOpen(false)} to="/">
               About
             </Link>
           </li>

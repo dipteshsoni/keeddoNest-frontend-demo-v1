@@ -1,4 +1,5 @@
 
+import EnrollPrompt from "../enroll/EnrollPrompt";
 import ProgramDetail from "../programDetail/ProgramDetail";
 export default function EarlyLearning() {
 
@@ -152,9 +153,11 @@ export default function EarlyLearning() {
   ];
 
   return (
-    <ProgramDetail
+   <> <ProgramDetail
       title="Early Learning & Literacy (3 – 6 Years)"
       sections={sections}
     />
+    <EnrollPrompt program="the Early Learning Program" />
+    </>
   );
 }

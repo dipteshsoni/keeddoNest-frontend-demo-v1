@@ -1,3 +1,4 @@
+import EnrollPrompt from "../enroll/EnrollPrompt";
 import ProgramDetail from "../programDetail/ProgramDetail";
 
 export default function FreeZone() {
@@ -8,44 +9,62 @@ export default function FreeZone() {
       heading: "Philosophy",
       type: "text",
       content:
-        "FreeZone is a safe and expressive space where children explore freely, discover creativity and build confidence without academic pressure."
+        "Movement is emotional release. Children need opportunities to express themselves freely through movement, rhythm, and creativity. This space encourages joyful physical activity where children build confidence, coordination, and emotional expression without pressure or strict rules."
     },
 
     {
-      heading: "Syllabus",
-      type: "dropdown",
+      heading: "Physical Development",
+      type: "advancedDropdown",
       content: [
+
         {
-          topic: "Creative Activities",
-          points: [
-            "Art & craft exploration",
-            "Music and movement sessions",
-            "Open-ended play learning"
+          topic: "💃 Dance Forms Offered",
+          subsections: [
+            {
+              title: "Styles Introduced",
+              points: [
+                "Free-style dance for natural movement and expression",
+                "Bollywood dance for rhythm and energy",
+                "Contemporary movement for creativity and flow",
+                "Semi-classical elements for grace and body control"
+              ]
+            }
           ]
         },
+
         {
-          topic: "Confidence Building",
-          points: [
-            "Group sharing sessions",
-            "Self-expression exercises",
-            "Social interaction games"
+          topic: "🧠 Skills Developed",
+          subsections: [
+            {
+              title: "Physical Skills",
+              points: [
+                "Balance and coordination",
+                "Rhythm and flexibility",
+                "Body awareness"
+              ]
+            },
+            {
+              title: "Emotional Benefits",
+              points: [
+                "Emotional release through movement",
+                "Confidence in self-expression",
+                "Joyful participation in group activities"
+              ]
+            }
           ]
         }
-      ]
-    },
 
-    {
-      heading: "Skills Developed",
-      type: "list",
-      content: [
-        "Emotional awareness",
-        "Creative thinking",
-        "Social confidence",
-        "Independent expression"
       ]
     }
 
   ];
 
-  return <ProgramDetail title="FreeZone" sections={sections} />;
+  return (
+    <> <ProgramDetail
+      title="Free Zone – Physical Growth & Expression"
+      sections={sections}
+    />
+    <EnrollPrompt program="the Free Zone Program" />
+    </>
+  );
 }

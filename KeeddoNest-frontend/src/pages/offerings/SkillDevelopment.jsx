@@ -1,3 +1,4 @@
+import EnrollPrompt from "../enroll/EnrollPrompt";
 import ProgramDetail from "../programDetail/ProgramDetail";
 
 export default function SkillDevelopment() {
@@ -8,66 +9,120 @@ export default function SkillDevelopment() {
       heading: "Philosophy",
       type: "text",
       content:
-        "Skill Development at Keeddonest focuses on practical growth, confidence building and real-world readiness. We nurture communication, creativity and critical thinking through structured engagement."
+        "Knowledge without expression limits a child’s potential. This program focuses on building confidence, communication skills, leadership ability, and emotional intelligence so children can express their ideas clearly and interact confidently in social and academic environments."
     },
 
     {
-      heading: "Syllabus",
-      type: "dropdown",
+      heading: "Skill Areas & Detailed Syllabus",
+      type: "advancedDropdown",
       content: [
+
         {
-          topic: "Communication Skills",
-          points: [
-            "Public speaking confidence building",
-            "Verbal and non-verbal communication practice",
-            "Active listening exercises"
+          topic: "1️⃣ Verbal Communication & Clarity",
+          subsections: [
+            {
+              title: "Focus",
+              points: [
+                "Speaking clearly and confidently",
+                "Structuring thoughts before speaking",
+                "Improving vocabulary usage"
+              ]
+            },
+            {
+              title: "Activities",
+              points: [
+                "Guided speaking exercises",
+                "Everyday topic discussions",
+                "Short explanation tasks"
+              ]
+            }
           ]
         },
+
         {
-          topic: "Critical Thinking",
-          points: [
-            "Problem-solving challenges",
-            "Logical reasoning development",
-            "Decision-making simulations"
+          topic: "2️⃣ Public Speaking, Presentation & Debate",
+          subsections: [
+            {
+              title: "Why It Matters",
+              points: [
+                "Fear of speaking limits academic and social growth",
+                "Children need structured opportunities to express ideas"
+              ]
+            },
+            {
+              title: "Training Includes",
+              points: [
+                "Show & Tell",
+                "Short presentations",
+                "Opinion sharing",
+                "Debate readiness"
+              ]
+            }
           ]
         },
+
         {
-          topic: "Creative Exploration",
-          points: [
-            "Artistic expression workshops",
-            "Innovation-based activities",
-            "Creative storytelling practice"
+          topic: "3️⃣ Story Creation & Creative Expression",
+          subsections: [
+            {
+              title: "What Children Learn",
+              points: [
+                "Idea generation",
+                "Understanding story structure",
+                "Using imagination and originality"
+              ]
+            },
+            {
+              title: "Outcome",
+              points: [
+                "Confidence in self-expression",
+                "Stronger creativity and imagination"
+              ]
+            }
           ]
         },
+
         {
-          topic: "Leadership & Confidence",
-          points: [
-            "Team collaboration exercises",
-            "Responsibility-driven tasks",
-            "Confidence enhancement sessions"
+          topic: "4️⃣ Social Skills, Leadership & Teamwork",
+          subsections: [
+            {
+              title: "Skills Covered",
+              points: [
+                "Group interaction",
+                "Taking leadership roles",
+                "Cooperation in team tasks",
+                "Conflict resolution"
+              ]
+            }
+          ]
+        },
+
+        {
+          topic: "5️⃣ Emotional Intelligence",
+          subsections: [
+            {
+              title: "Focus Areas",
+              points: [
+                "Identifying emotions",
+                "Managing reactions",
+                "Understanding others’ feelings",
+                "Developing empathy"
+              ]
+            }
           ]
         }
-      ]
-    },
 
-    {
-      heading: "Skills Developed",
-      type: "list",
-      content: [
-        "Effective communication",
-        "Critical thinking ability",
-        "Creative expression",
-        "Leadership confidence",
-        "Problem-solving mindset"
       ]
     }
 
   ];
 
   return (
-    <ProgramDetail
-      title="Skill Development"
+   <> <ProgramDetail
+      title="Skill Development Program (6 – 12 Years)"
       sections={sections}
     />
+
+       <EnrollPrompt program="the Skill Development Program" /></>
   );
 }
