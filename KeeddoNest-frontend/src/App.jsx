@@ -36,6 +36,7 @@ function App() {
         <Route path="/enrollment" element={<Enrollment />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<Home />} />
       </Routes>
       </div>
       <Footer />

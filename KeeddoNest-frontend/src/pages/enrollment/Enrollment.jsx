@@ -76,35 +76,49 @@ export default function Enrollment() {
           </p>
 
           <div className="program-highlights">
-            <div className="highlight-card">
+            <div className="highlight-card offline-card">
               <span>🧸</span>
               <div>
                 <h4>Early Learning</h4>
-                <p>Strong emotional and cognitive foundations.</p>
+                <p>Available in offline mode.</p>
               </div>
             </div>
 
-            <div className="highlight-card">
+            <div className="highlight-card offline-card">
               <span>🧠</span>
               <div>
                 <h4>Skill Development</h4>
-                <p>Communication, confidence and leadership.</p>
+                <p>Available in offline mode.</p>
               </div>
             </div>
 
-            <div className="highlight-card">
+            <div className="highlight-card offline-card">
               <span>📚</span>
               <div>
-                <h4>Stress-Free Academics</h4>
-                <p>Concept clarity without pressure.</p>
+                <h4>Learning Support</h4>
+                <p>Available in offline mode.</p>
+              </div>
+            </div>
+            <div className="highlight-card offline-card">
+              <span>📚</span>
+              <div>
+                <h4>Toddler Program</h4>
+                <p>Available in offline mode.</p>
+              </div>
+            </div>
+            <div className="highlight-card offline-card">
+              <span>💛</span>
+              <div>
+                <h4>Free Zone – Dance & Creative Expression</h4>
+                <p>Available in offline mode.</p>
               </div>
             </div>
 
-            <div className="highlight-card">
+            <div className="highlight-card offline-online-card">
               <span>💛</span>
               <div>
-                <h4>Parent Support</h4>
-                <p>Counselling and parenting guidance.</p>
+                <h4>Counselling and parenting guidance.</h4>
+                <p>Available in both online and offline modes.</p>
               </div>
             </div>
           </div>

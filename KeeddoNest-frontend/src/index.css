@@ -20,6 +20,10 @@ html, body {
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* 👇 GLOBAL BACKGROUND ONLY — no layout rules */
 body {
   background-color: var(--primary-bg);

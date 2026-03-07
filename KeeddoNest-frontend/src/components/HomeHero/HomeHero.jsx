@@ -1,5 +1,5 @@
 import "./homeHero.css";
-import KeeddonestImage1 from "../../assets/keeddoNestImage01.jpeg";
+import KeeddonestImage1 from "../../assets/KeeddonestLogo.jpeg";
 // import KeeddoNestLogo from "../../assets/KeeddonestLogo.jpeg";
 
 export default function HomeHero() {

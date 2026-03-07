@@ -38,3 +38,67 @@
     text-align: left;
   }
 }
+
+
+.footer-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.footer-links span {
+  cursor: pointer;
+  text-decoration: underline;
+  color: orange;
+}
+
+/* Modal overlay */
+
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal box */
+
+.policy-modal {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-height: 80vh;
+  overflow-y: auto;
+  font-size: 1.2rem;
+  color: orange;
+}
+.policy-modal p {
+  margin-bottom: 16px;
+  color: green;
+  font-size:1rem;
+}
+
+/* Close button */
+
+.policy-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background: orange;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+}
+
+.policy-overlay {
+  backdrop-filter: blur(3px);
+}

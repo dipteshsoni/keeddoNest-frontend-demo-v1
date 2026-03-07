@@ -21,20 +21,22 @@ export default function Navbar() {
       <nav className="navbar">
 
         {/* LEFT SIDE */}
-        <div className="nav-left">
-          <img
-            src={KeeddoNestLogo}
-            alt="Keeddonest Logo"
-            className="nav-logo"  
-          />
-          <span className="brand1">Keedd<span className="brand2">oNest</span></span>
-        </div>
+
+
+        <Link to="/" className="nav-left">
+
+  <img src={KeeddoNestLogo} className="nav-logo" alt="Keeddonest Logo" />
+
+  <span className="brand1">Keeddo<span className="brand2">Nest</span></span>
+
+
+</Link>
 
         {/* DESKTOP MENU */}
         <ul className="nav-links">
 
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/">About</Link></li>
+          <li><Link to="/about">About</Link></li>
 
           <li className="dropdown">
   <span className="dropdown-title">Offerings ▾</span>
@@ -125,7 +127,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link onClick={() => setMenuOpen(false)} to="/">
+            <Link onClick={() => setMenuOpen(false)} to="/about">
               About
             </Link>
           </li>
@@ -136,7 +138,7 @@ export default function Navbar() {
               className="mobile-dropdown-toggle"
               onClick={() => toggleSub(0)}
             >
-              Offerings
+              <p>Offerings</p>
               <span>{openIndex === 0 ? "−" : "+"}</span>
             </div>
 

@@ -1,14 +1,23 @@
 import "./Gallery.css";
+import img1 from "../../assets/CounsellingServices.jpeg";
+import img2 from "../../assets/EarlyLearning.jpeg";
+import img3 from "../../assets/FreeZone.jpeg";
+import img4 from "../../assets/SkillDevelopment.jpeg";
+import img5 from "../../assets/ToddlerProgram.jpeg";
+import img6 from "../../assets/SchoolSupport.jpeg";
+import img7 from "../../assets/KeeddonestImage1.jpeg";
+import img8 from "../../assets/KeeddonestImage01.jpeg";
+import img9 from "../../assets/KeeddonestLogo.jpeg";
 
 export default function Gallery() {
 
   const images = [
-    "https://images.unsplash.com/photo-1509062522246-3755977927d7",
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    img1,
+    img2,
+    img3,img4,
+    img5,
+    img6,img7,img8,img9
+    
   ];
 
   return (

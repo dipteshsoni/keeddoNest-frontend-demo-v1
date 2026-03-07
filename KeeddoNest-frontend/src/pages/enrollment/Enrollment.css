@@ -233,3 +233,19 @@
   margin-bottom:15px;
   color:#0d1b3d;
 }
+
+.offline-online-card{
+background: linear-gradient(
+     90deg,
+     rgb(242, 254, 242),
+    rgb(252, 243, 226)
+  );
+}
+
+.offline-card{
+background: linear-gradient(
+    90deg,
+    rgb(221, 252, 221),
+    rgb(255, 252, 247)
+  );
+}
