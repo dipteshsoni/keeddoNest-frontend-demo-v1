@@ -13,7 +13,7 @@ export default function FounderSection() {
           <div className="founder-card">
             <div className="founder-image">
               <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                src=""
                 alt="Founder"
               />
             </div>
@@ -40,7 +40,7 @@ export default function FounderSection() {
           <div className="founder-card">
             <div className="founder-image">
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+                src=""
                 alt="Founder"
               />
             </div>

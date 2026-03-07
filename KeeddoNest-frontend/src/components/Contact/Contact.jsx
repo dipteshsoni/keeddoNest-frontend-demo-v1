@@ -1,4 +1,5 @@
 import "./contact.css";
+import { useState } from "react";
 import {
   FaPhone,
   FaEnvelope,
@@ -9,6 +10,26 @@ import {
 } from "react-icons/fa";
 
 export default function Contact() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdL_zk4518hsFbr5_yPjSkk8BhNfrkeVZBB26D9PP26_6MhMg/formResponse",
+      {
+        method: "POST",
+        mode: "no-cors",
+        body: data,
+      }
+    );
+
+    form.reset();
+    setShowModal(true);
+  };
   return (
     <section className="contact-section">
       <h1 className="contact-title">Wanna Connect !!</h1>
@@ -67,15 +88,11 @@ export default function Contact() {
 
         {/* RIGHT FORM */}
         <div className="contact-form">
-          <form
-            action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
-            method="POST"
-            target="_blank"
-          >
+             <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Name</label>
               <input
-                name="entry.111111"
+                name="entry.210529627"
                 type="text"
                 placeholder="Your name"
                 required
@@ -85,7 +102,7 @@ export default function Contact() {
             <div className="form-group">
               <label>Mobile Number</label>
               <input
-                name="entry.222222"
+                name="entry.1744770078"
                 type="tel"
                 placeholder="+91"
                 required
@@ -95,7 +112,7 @@ export default function Contact() {
             <div className="form-group">
               <label>Email</label>
               <input
-                name="entry.333333"
+                name="entry.1298067567"
                 type="email"
                 placeholder="your@email.com"
                 required
@@ -105,7 +122,7 @@ export default function Contact() {
             <div className="form-group">
               <label>Message</label>
               <textarea
-                name="entry.444444"
+                name="entry.1870460633"
                 rows="4"
                 placeholder="Write your message..."
                 required
@@ -116,6 +133,29 @@ export default function Contact() {
           </form>
         </div>
       </div>
+
+      {/* SUCCESS MODAL */}
+
+      {showModal && (
+        <div className="modal-overlay">
+
+          <div className="success-modal">
+
+            <h2>Message Sent Successfully 🎉</h2>
+
+            <p>
+              Thank you for reaching out to Keeddonest.  
+              Our team will contact you soon.
+            </p>
+
+            <button onClick={() => setShowModal(false)}>
+              Close
+            </button>
+
+          </div>
+
+        </div>
+      )}
     </section>
   );
 }

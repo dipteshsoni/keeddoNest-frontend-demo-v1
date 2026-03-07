@@ -26,20 +26,26 @@ export default function Gallery() {
       <div className="gallery-wrapper">
 
         <div className="gallery-header">
-          <h1>Our Learning Moments</h1>
+          {/* <h1>Our Learning Moments</h1>
           <p>
             A glimpse into the nurturing environment, engaging sessions,
             and meaningful experiences at Keeddonest.
+          </p> */}
+          <h1>Images coming soon</h1>
+          <p >
+            A glimpse into the nurturing environment, engaging sessions,
+            and meaningful experiences at Keeddonest will be showcased here soon. We are in the process of collecting and curating beautiful moments from our programs to share with you. Stay tuned for updates!
           </p>
         </div>
 
-        <div className="gallery-grid">
+{/* Disabling gallery for now as we are still in the process of collecting images and designing the gallery layout. It will be available soon with a beautiful showcase of our learning moments and activities. Stay tuned for updates! */}
+        {/* <div className="gallery-grid">
           {images.map((img, index) => (
             <div className="gallery-card" key={index}>
               <img src={img} alt="Gallery" />
             </div>
           ))}
-        </div>
+        </div> */}
 
       </div>
 
