@@ -1,0 +1,188 @@
+.contact-section {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid green;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: orange;
+  text-align: center;
+}
+
+.contact-subtitle {
+  margin-top: 10px;
+  color: #0d1b3d;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* LEFT PANEL */
+
+.contact-info {
+  background: linear-gradient(
+    135deg,
+    rgba(0,123,255,0.1),
+    rgba(255,140,0,0.1)
+  );
+
+  padding: 40px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info h2 {
+  font-size: 1.4rem;
+  color: orange;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: green;
+  font-weight: 500;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  font-size: 1.4rem;
+  color: orange;
+  cursor: pointer;
+}
+
+/* FORM */
+
+.contact-form {
+  background: white;
+  padding: 40px 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: orange;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: orange;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* DESKTOP */
+
+@media (min-width: 768px) {
+
+  .contact-container {
+    flex-direction: row;
+  }
+
+  .contact-info {
+    width: 40%;
+  }
+
+  .contact-form {
+    width: 60%;
+  }
+
+}
+
+/* MODAL OVERLAY */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+/* MODAL BOX */
+
+.success-modal {
+
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+
+  text-align: center;
+
+  max-width: 350px;
+}
+
+.success-modal h2 {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.success-modal p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.success-modal button {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}

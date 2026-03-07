@@ -1,18 +1,53 @@
 import './App.css'
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
+import Home from './components/Home/Home';
+import EarlyLearning from './pages/offerings/EarlyLearning';
+import FreeZone from './pages/offerings/FreeZone';
+import LearningSupport from './pages/offerings/LearningSupport';
+import SkillDevelopment from './pages/offerings/SkillDevelopment';
+import ToddlerProgram from './pages/offerings/ToddlerProgram';
+import CounsellingServices from './pages/offerings/CounsellingServices';
+import Enrollment from './pages/enrollment/Enrollment';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Gallery from './pages/gallery/Gallery';
+import IntroLoader from './components/IntroLoader/IntroLoader';
+import { useState } from 'react';
 
 function App() {
-  return(
-    <div className="App">
-      <h1>Keeddonest 🚀</h1>
-      <h2>Welcome bhna, Here you can see the progress of what we're building! This will 
-        be the frontend of our app. Stay tuned for updates!
-        Building will be a little slow on weekDays, but I want to make u assure that I will be working hard to make it happen asap.
-         Thanks for your patience and support!
-      </h2>
-      <h2>Once the app is ready, you'll be able to see all the features and functionality I've built!</h2>
-      <h5>This is just a demo. Keep an eye out for updates and new features coming soon!</h5>
-    </div>
-  ) 
+  const [showLoader, setShowLoader] = useState(true);
+  return (
+    <>
+    
+        <HashRouter>
+      <div className="app-container">
+      <Navbar />
+      <div className="page-content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/earlyLearning" element={<EarlyLearning />} />
+        <Route path="/freeZone" element={<FreeZone />} />
+        <Route path="/learningSupport" element={<LearningSupport />} />
+        <Route path="/skillDevelopment" element={<SkillDevelopment />} />
+        <Route path="/toddlerProgram" element={<ToddlerProgram />} />
+        <Route path="/counsellingServices" element={<CounsellingServices />} />
+        <Route path="/enrollment" element={<Enrollment />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<Home />} />
+      </Routes>
+      </div>
+      <Footer />
+      </div>
+    </HashRouter>
+      {/* LOADER OVERLAY */}
+      {showLoader && (
+        <IntroLoader onFinish={() => setShowLoader(false)} />
+      )}
+    </>
+  );
 }
 
 export default App;

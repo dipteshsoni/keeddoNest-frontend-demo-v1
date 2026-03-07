@@ -1,0 +1,117 @@
+.founder-section {
+  width: 100%;
+  margin: 0 0;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: center;
+  border-top: 5px solid orange;
+}
+
+.founder-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px 20px;
+  border-radius: 20px;
+/* 
+  background: linear-gradient(
+    90deg,
+    rgba(0, 123, 255, 0.08),
+    rgba(255, 140, 0, 0.08)
+  ); */
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* border: 2px solid #0d1b3d; */
+}
+
+.founder-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: orange;
+}
+
+
+/* GRID WRAPPER */
+.founder-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+/* CARD */
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: white;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 123, 255, 0.08),
+    rgba(255, 140, 0, 0.08)
+  );
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.founder-image {
+  display: flex;
+  justify-content: center;
+}
+
+.founder-image img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.founder-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.founder-content h1 {
+  font-size: 1.4rem;
+  color: orange;
+}
+
+.founder-content h2 {
+  font-size: 1.1rem;
+  color: orange;
+}
+
+.founder-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: green;
+  font-weight: 600;
+}
+
+.founder-contact {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* DESKTOP LAYOUT */
+@media (min-width: 768px) {
+
+  .founder-grid {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .founder-card {
+    width: 50%;
+  }
+
+}
