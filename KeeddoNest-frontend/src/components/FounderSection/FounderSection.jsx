@@ -1,4 +1,6 @@
 import "./founderSection.css";
+import ashuti from "../../assets/Ashuti.png";
+import somya from "../../assets/Somya.jpeg";
 
 export default function FounderSection() {
   return (
@@ -13,7 +15,7 @@ export default function FounderSection() {
           <div className="founder-card">
             <div className="founder-image">
               <img
-                src=""
+                src={ashuti}
                 alt="Founder"
               />
             </div>
@@ -40,13 +42,13 @@ export default function FounderSection() {
           <div className="founder-card">
             <div className="founder-image">
               <img
-                src=""
+                src={somya}
                 alt="Founder"
               />
             </div>
 
             <div className="founder-content">
-              <h1>Somya</h1>
+              <h1>Somyaa Lalwani (Priyanka)</h1>
               <h2>Founder</h2>
               <div className="founder-contact">
                 Director of People & Brand Strategy and Caregiver.

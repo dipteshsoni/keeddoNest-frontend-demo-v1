@@ -4,23 +4,43 @@ import "./Enrollment.css";
 export default function Enrollment() {
 
   const [submitted, setSubmitted] = useState(false);
+  const [formStartTime] = useState(Date.now());
 
-  const handleSubmit = () => {
-    alert("This feature is not working right now, It will be available soon!! Please try contact us page to contact for any query right now !");
-    // setSubmitted(true);
+  const handleSubmit = (e) => {
 
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth",
-    // });
+    const form = e.target;
+    const honeypot = form.company.value;
+    const timeTaken = Date.now() - formStartTime;
+
+    if (honeypot) {
+      e.preventDefault();
+      return;
+    }
+
+    if (timeTaken < 3000) {
+      e.preventDefault();
+      alert("Please take a moment to fill the form properly.");
+      return;
+    }
+
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 700);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
 
   return (
+
     <section className="enroll-page">
 
       <div className="enroll-container">
 
         {/* LEFT SIDE */}
+
         <div className="enroll-left">
 
           <h1>Start Your Learning Journey</h1>
@@ -31,62 +51,10 @@ export default function Enrollment() {
             creativity, and strong emotional foundations.
           </p>
 
-          <div className="program-highlights">
-
-            <div className="highlight-card offline-card">
-              <span>🧸</span>
-              <div>
-                <h4>Early Learning</h4>
-                <p>Available in offline mode.</p>
-              </div>
-            </div>
-
-            <div className="highlight-card offline-card">
-              <span>🧠</span>
-              <div>
-                <h4>Skill Development</h4>
-                <p>Available in offline mode.</p>
-              </div>
-            </div>
-
-            <div className="highlight-card offline-card">
-              <span>📚</span>
-              <div>
-                <h4>Learning Support</h4>
-                <p>Available in offline mode.</p>
-              </div>
-            </div>
-
-            <div className="highlight-card offline-card">
-              <span>👶</span>
-              <div>
-                <h4>Toddler Program</h4>
-                <p>Available in offline mode.</p>
-              </div>
-            </div>
-
-            <div className="highlight-card offline-card">
-              <span>🎨</span>
-              <div>
-                <h4>Free Zone – Creative Expression</h4>
-                <p>Available in offline mode.</p>
-              </div>
-            </div>
-
-            <div className="highlight-card offline-online-card">
-              <span>💛</span>
-              <div>
-                <h4>Counselling & Parenting Guidance</h4>
-                <p>Available in both online and offline modes.</p>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
 
-        {/* RIGHT SIDE FORM */}
+        {/* RIGHT FORM */}
 
         <div className="enroll-right">
 
@@ -96,8 +64,6 @@ export default function Enrollment() {
             ⏱ Takes less than 30 seconds to complete
           </p>
 
-
-          {/* Hidden iframe prevents page redirect */}
           <iframe
             name="hidden_iframe"
             style={{ display: "none" }}
@@ -112,6 +78,18 @@ export default function Enrollment() {
             onSubmit={handleSubmit}
           >
 
+            {/* Honeypot */}
+
+            <input
+              type="text"
+              name="company"
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
+            {/* Parent Name */}
+
             <input
               name="entry.723751582"
               type="text"
@@ -119,60 +97,67 @@ export default function Enrollment() {
               required
             />
 
+            {/* Mobile */}
+
             <input
               name="entry.1781759453"
               type="tel"
-              placeholder="Contact Number"
+              placeholder="Mobile Number"
+              pattern="[6-9]{1}[0-9]{9}"
+              maxLength="10"
               required
             />
+
+            {/* Email */}
 
             <input
               name="entry.1807633120"
               type="email"
-              placeholder="Email Address (Optional)"
+              placeholder="Email Address"
+              required
             />
+
+            {/* City */}
 
             <input
               name="entry.340482430"
               type="text"
-              placeholder="City (Optional)"
+              placeholder="City"
+              required
             />
 
-            <select
-              name="entry.127511018"
-              defaultValue=""
-  required
-            >
-              <option value="" disabled selected>
+            {/* Who is program for */}
+
+            <select name="entry.127511018" defaultValue="" required>
+
+              <option value="" disabled>
                 Who is the program for?
               </option>
 
-              <option value="Toddler (2–4 years)">
-                Toddler (2–4 years)
+              <option value="Toddler (2-4 years)">
+                Toddler (2-4 years)
               </option>
 
-              <option value="Child (5–12 years)">
-                Child (5–12 years)
+              <option value="Child (5-12 years)">
+                Child (5-12 years)
               </option>
 
-              <option value="Teenager (13–17 years)">
-                Teenager (13–17 years)
+              <option value="Teenager (13-17 years)">
+                Teenager (13-17 years)
               </option>
 
-              <option value="Parent / Adult">
-                Parent / Adult
+              <option value="Parent">
+                Parent
               </option>
 
             </select>
 
 
-            <select
-              name="entry.1485140938"
-              defaultValue=""
-  required
-            >
+            {/* Program */}
 
-              <option value="" disabled selected>
+            <select name="entry.1485140938" defaultValue="" required>
+
+              <option value="" disabled>
                 Which program are you interested in?
               </option>
 
@@ -184,11 +169,11 @@ export default function Enrollment() {
                 Skill Development Program
               </option>
 
-              <option value="School Support">
+              <option value="School Support (Stress-Free Academics)">
                 School Support (Stress-Free Academics)
               </option>
 
-              <option value="Free Zone – Creative Expression">
+              <option value="Free Zone – Dance & Creative Expression">
                 Free Zone – Dance & Creative Expression
               </option>
 
@@ -196,7 +181,7 @@ export default function Enrollment() {
                 Counselling Services
               </option>
 
-              <option value="Parenting Support">
+              <option value="Parenting Support / Workshops">
                 Parenting Support / Workshops
               </option>
 
@@ -204,20 +189,18 @@ export default function Enrollment() {
                 Combo Programs
               </option>
 
-              <option value="Need Guidance">
+              <option value="Not Sure – Need Guidance">
                 Not Sure – Need Guidance
               </option>
 
             </select>
 
 
-            <select
-              name="entry.1573856039"
-              defaultValue=""
-              required
-            >
+            {/* Mode */}
 
-              <option value="" disabled selected>
+            <select name="entry.1573856039" defaultValue="" required>
+
+              <option value="" disabled>
                 Preferred Mode of Learning
               </option>
 
@@ -225,21 +208,24 @@ export default function Enrollment() {
 
               <option value="Offline">Offline</option>
 
-              <option value="Either">Either is fine</option>
+              <option value="Either is fine">Either is fine</option>
 
-              <option value="Not sure">Not sure yet</option>
+              <option value="Not sure yet">Not sure yet</option>
 
             </select>
 
+
+            {/* Support */}
 
             <textarea
               name="entry.628308853"
               rows="4"
               placeholder="What kind of support are you looking for?"
+              required
             ></textarea>
 
 
-            <button type="submit" >
+            <button type="submit">
               Submit Enrollment Request
             </button>
 
@@ -280,5 +266,6 @@ export default function Enrollment() {
       )}
 
     </section>
+
   );
 }
