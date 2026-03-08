@@ -177,9 +177,9 @@ export default function Enrollment() {
 
               <option value="Toddler (2-4 years)">Toddler (2-4 years)</option>
 
-              <option value="Child (5-12 years)">Child (5-12 years)</option>
+              <option value="Child (5 -12 years)">Child (5-12 years)</option>
 
-              <option value="Teenager (13-17 years)">
+              <option value="Teenager (13 -17 years)">
                 Teenager (13-17 years)
               </option>
 
