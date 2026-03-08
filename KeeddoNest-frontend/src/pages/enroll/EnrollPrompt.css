@@ -83,7 +83,7 @@
 
 .enroll-floating button {
 
-  background: orange;
+  /* background: orange; */
 
   color: white;
 
@@ -98,7 +98,8 @@
 }
 
 .enroll-floating button:hover {
-  background: rgb(1, 68, 1);
+  background: green;
+  color: white;
 }
 
 .enroll-floating {
@@ -144,19 +145,21 @@
 
   cursor: pointer;
 
-  color: #666;
+  color: white;
+  background-color: orange;
 
 }
 
 .prompt-close:hover {
-  color: black;
+  color: green;
+  /* background-color: black; */
 }
 
 /* enroll button */
 
 .prompt-btn {
 
-  background: #007bff;
+  background: orange;
 
   color: white;
 
@@ -171,5 +174,5 @@
 }
 
 .prompt-btn:hover {
-  background: #0056b3;
+  background: green;
 }
