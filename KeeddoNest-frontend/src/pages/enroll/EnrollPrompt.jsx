@@ -14,6 +14,7 @@ export default function EnrollPrompt({ program }) {
     <div className="enroll-floating">
 
       <button
+        id="close-button"
         className="prompt-close"
         onClick={() => setVisible(false)}
       >
